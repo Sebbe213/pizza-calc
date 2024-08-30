@@ -2,48 +2,51 @@
 class DoughCalculation:
 
     def __init__(self):
-        self.total = None
-        self.yeast = None
-        self.size = None
-        self.hydration = None
-        self.saltpercentage = None
-        self.flour = None
-        self.temp = None
-        self.water = None
-        self.salt = None
-        self.yeast = None
-        self.time = None
+        self.total = 0
+        self.yeast = 0
+        self.size = 0
+        self.hydration = 0
+        self.saltpercentage = 0
+        self.flour = 0
+        self.temp = 0
+        self.water = 0
+        self.salt = 0
+        self.yeast = 0
+        self.time = 0
+        self.error = 0
 
 
     def set_total_dough_weight(self,amount,size):
-        self.size = size
-        self.total = amount * self.size
+        self.size = int(size)
+        self.total = int(amount) * self.size
 
     def get_total_dough_weight(self):
         return self.total
 
     def set_total_flour_amount(self,salt,water):
-        self.hydration = water
-        self.saltpercentage = salt
-        self.flour = self.size/(1+self.hydration+self.saltpercentage)
+        self.hydration = float(water)
+        self.saltpercentage = float(salt)
+        self.flour = self.total/(1+self.hydration+self.saltpercentage)
 
     def get_total_flour_amount(self):
         return self.flour
 
-    def set_water_amount(self):
+    def set_water_amount(self,hydration):
+        self.hydration = float(hydration)
         self.water = self.flour * self.hydration
 
     def get_water_amount(self):
         return self.water
 
-    def set_salt_amount(self):
+    def set_salt_amount(self,salt):
+        self.saltpercentage = float(salt)
         self.salt = self.flour * self.saltpercentage
 
     def get_salt_amount(self):
         return self.salt
 
     def set_yeast_amount(self,time):
-        self.time = time
+        self.time = int(time)
         if(self.time >= 8 and self.time <= 12):
             self.yeast = self.flour * 0.0035
         elif(self.time>12 and self.time <=48):
@@ -51,12 +54,14 @@ class DoughCalculation:
         elif(self.time>48  and self.time<=72):
             self.yeast = self.flour * 0.007
         else:
-            self.yeast = "The fermentation time is to long, max should be 72h"
+            self.yeast = "The fermentation is either to long or short needs to be between 8-72h"
 
     def get_yeast_mount(self):
         return self.yeast
+    #def get_error_message(self):
+        #return self.error
 
-
+#add a reste method to reset all the variables
 
 
 

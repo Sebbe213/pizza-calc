@@ -19,7 +19,10 @@ class CreateTextField:
 
 
     def get_text(self):
-        return self.txt.get(0,tk.END)
+        return self.txt.get("1.0",tk.END)
 
     def return_text_field(self):
         return self.txt
+    def destroy(self):
+        self.txt.destroy()
+
