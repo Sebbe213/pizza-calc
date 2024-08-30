@@ -28,8 +28,21 @@ def main_frame():
     time.text_field()
     people = ctf.CreateTextField(app.get_root(),50,250,10,2.49)
     people.text_field()
-    #flour_text = ct.CreateText(app.get_root(),"flour",155,50)
-    #flour_text.create_label()
+
+    flour_text = ct.CreateText(app.get_root(),"Dough weight",185,55)
+    flour_text.create_label()
+
+    water_text = ct.CreateText(app.get_root(),"% Water (0-1)",185,105)
+    water_text.create_label()
+
+    salt_text = ct.CreateText(app.get_root(),"% Salt (0-1)",185,155)
+    salt_text.create_label()
+
+    time_text= ct.CreateText(app.get_root(),"Fermentation time" ,185,205)
+    time_text.create_label()
+
+    people_text = ct.CreateText(app.get_root(), "Amount of doughs", 185,255)
+    people_text.create_label()
 
     add_flour_button = cb.CreateButton(app.get_root(),135,49,"+","black",lambda: add_flour.add_button_pressed(amount_flour.return_text_field()),5,2)
     add_flour_button.initiate_button()
