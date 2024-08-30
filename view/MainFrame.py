@@ -72,3 +72,6 @@ def main_frame():
     calculate_button = cb.CreateButton(app.get_root(),300,300,"calculate","black",lambda : results.calculate(people, amount_flour, amount_water, amount_salt, time),10,2)
     calculate_button.initiate_button()
     app.start()
+
+
+    #h
