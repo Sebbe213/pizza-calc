@@ -21,15 +21,15 @@ class Textfieldinserter:
             text_field.delete("1.0", tk.END)
             text_field.insert("1.0", int(self.i))
     def add_button_smal(self,text_field):
-        if(self.i<=1):
+        if(self.i<1):
             self.i += 0.05
             text_field.delete("1.0",tk.END)
-            text_field.insert("1.0",self.i)
+            text_field.insert("1.0",f'{self.i:.2f}')
     def subtract_button_smal(self,text_field):
-        if (self.i > 0):
+        if (self.i > 0.05):
             self.i -= 0.05
             text_field.delete("1.0", tk.END)
-            text_field.insert("1.0", float(self.i))
+            text_field.insert("1.0", f'{self.i:.2f}')
 
 
     def get_result(self):
