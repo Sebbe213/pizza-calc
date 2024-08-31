@@ -29,21 +29,21 @@ class DoughCalculation:
         self.flour = self.total/(1+self.hydration+self.saltpercentage)
 
     def get_total_flour_amount(self):
-        return self.flour
+        return int(self.flour)
 
     def set_water_amount(self,hydration):
         self.hydration = float(hydration)
         self.water = self.flour * self.hydration
 
     def get_water_amount(self):
-        return self.water
+        return int(self.water)
 
     def set_salt_amount(self,salt):
         self.saltpercentage = float(salt)
         self.salt = self.flour * self.saltpercentage
 
     def get_salt_amount(self):
-        return self.salt
+        return int(self.salt)
 
     def set_yeast_amount(self,time):
         self.time = int(time)
@@ -57,7 +57,7 @@ class DoughCalculation:
             self.yeast = "The fermentation is either to long or short needs to be between 8-72h"
 
     def get_yeast_mount(self):
-        return self.yeast
+        return f'{self.yeast:.2f}'
     #def get_error_message(self):
         #return self.error
 
