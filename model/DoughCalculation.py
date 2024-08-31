@@ -57,7 +57,11 @@ class DoughCalculation:
             self.yeast = "The fermentation is either to long or short needs to be between 8-72h"
 
     def get_yeast_mount(self):
-        return f'{self.yeast:.2f}'
+        try:
+            return f'{self.yeast:.2f}'
+        except ValueError:
+            return self.yeast
+
     #def get_error_message(self):
         #return self.error
 

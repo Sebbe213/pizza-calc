@@ -15,7 +15,7 @@ def main_frame():
     add_salt = tx.Textfieldinserter()
     add_time = tx.Textfieldinserter()
     add_people = tx.Textfieldinserter()
-    app = cf.CreateFrame(400, 400)
+    app = cf.CreateFrame(500, 400)
     app.frame("Pizza calculator")
     results= dr.DisplayResults(app.get_root())
     amount_flour = ctf.CreateTextField(app.get_root(),50,50,10,2.49)
